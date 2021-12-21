@@ -9,5 +9,17 @@ services:
       args:
         NODE_ENV: production
     environment:
+      - PORT=${PORT}
       - NODE_ENV=production
+      - DB_ADMIN_NAME=${DB_ADMIN_NAME}
+      - DB_ADMIN_PASSWORD=${DB_ADMIN_PASSWORD}
+      - DB_IP=${DB_IP}
+      - DB_PORT=${DB_PORT}
+      - DB_AUTH=${DB_AUTH}
+      - JWT_SECRET=${JWT_SECRET}
     command: node index.js
+  
+  mongo:
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
