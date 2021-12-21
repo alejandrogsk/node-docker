@@ -26,7 +26,7 @@ app.enable("trust proxy")
 app.use("/api", postRouter);
 app.use("/api", authRouter);
 
-app.get('/', (req, res)=>{
+app.get('/content', (req, res)=>{
   res.send("<h1>Hola mi gente!!!</h1>")
 });
 

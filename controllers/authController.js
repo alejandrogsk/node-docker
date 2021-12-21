@@ -4,13 +4,14 @@ const createToken = require('../helpers/jwtHelper');
 
 exports.signUp = async(req, res) => {
     try {
-        console.log(req.body)
         const { userName, password } = req.body;
-        const userExist = await User.findOne({userName})
-        if(userExist===!null) {
+
+        const userExist = await User.findOne({"userName": userName})
+
+        if(userExist === !null) {
             return res.status(400).json({
                 ok: false,
-                messaje: "User not found",
+                messaje: "User exists",
             })
         }
         
