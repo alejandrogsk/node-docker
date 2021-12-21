@@ -5,8 +5,16 @@ const createToken = require('../helpers/jwtHelper');
 exports.signUp = async(req, res) => {
     try {
         console.log(req.body)
-        
         const { userName, password } = req.body;
+        const userExist = await User.findOne({userName})
+        if(userExist===!null) {
+            return res.status(400).json({
+                ok: false,
+                messaje: "User not found",
+            })
+        }
+        
+        
         const { ok, strongPassword } = await passwordManager.passwordEncryption(password);
         
         if(ok !== true) return res.json({ok:false})
@@ -39,7 +47,6 @@ exports.login = async (req,res) => {
         const { userName, password } = req.body;
 
         const user = await User.findOne({userName})
-
         if(user===null) {
             return res.status(400).json({
                 ok: false,
