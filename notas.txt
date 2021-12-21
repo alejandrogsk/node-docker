@@ -1,0 +1,15 @@
+con esto creo mi imagen: docker build -t node-app-image .
+
+con esto creo mi container con todo y volumes (persistencia de datos):
+docker run -v $(pwd):/app -v /app/node_modules -p 4000:4000 -d --name node-app-container node-app-image
+
+54
+docker run -v $(pwd):/app -v /app/node_modules --env-file ./.env -p 5000:8000 -d --name node-app-container node-app-image
+docker container rm {container} -fv ( la v es de volumes )
+
+
+tengo este error:
+return Promise.reject(new errors_1.ClientClosedError());
+
+
+continuar 3:06
