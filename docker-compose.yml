@@ -9,6 +9,7 @@ services:
      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
   node-app-container:
     build: .
+    image: 42123674/node-docker
     # ports:
     #   - "4000:4000"
     depends_on:
