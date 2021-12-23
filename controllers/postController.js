@@ -21,7 +21,7 @@ exports.createPost = async(req, res) => {
 exports.getAllPosts = async (req, res) => {
     try {
         const allPosts = await Post.find();
-        console.log('Estos son los posts', allPosts)
+        
         res.status(200).json({
             ok: true,
             messaje: "Those are all the posts",
@@ -40,7 +40,7 @@ exports.getAllPosts = async (req, res) => {
 exports.getOnePost = async (req, res) => {
     try {
         const post = await Post.findById(req.params.id);
-        console.log(post);
+        
         res.status(200).json({
             ok: true,
             messaje: "Those are all the posts",

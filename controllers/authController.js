@@ -75,7 +75,7 @@ exports.login = async (req,res) => {
             }
         });
     } catch (error) {
-        console.log('error en catch')
+        console.log('error in catch')
         console.log(error)
         res.status(400).json({
             ok: false,
