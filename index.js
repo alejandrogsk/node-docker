@@ -27,7 +27,7 @@ app.use("/api", postRouter);
 app.use("/api", authRouter);
 
 app.get('/content', (req, res)=>{
-  res.send("<h1>Hello people!.</h1>")
+  res.send("<h1>Hello people!.</h1><h2>¡Hola mi gente!</h2>")
 });
 
 

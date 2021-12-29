@@ -8,6 +8,7 @@ services:
       context: .
       args:
         NODE_ENV: production
+    
     environment:
       - PORT=${PORT}
       - NODE_ENV=production
